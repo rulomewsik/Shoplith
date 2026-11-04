@@ -2,7 +2,7 @@
 
 namespace Catalog.Data.Seed;
 
-public class CatalogDatabaseSeeder(CatalogDBContext context) : IDatabaseSeeder
+public class CatalogDatabaseSeeder(CatalogDbContext context) : IDatabaseSeeder
 {
     public async Task SeedAllAsync()
     {

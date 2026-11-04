@@ -1,8 +1,8 @@
 ﻿namespace Catalog.Data;
 
-public class CatalogDBContext : DbContext
+public class CatalogDbContext : DbContext
 {
-    public CatalogDBContext(DbContextOptions<CatalogDBContext> options) : base(options)
+    public CatalogDbContext(DbContextOptions<CatalogDbContext> options) : base(options)
     {
         
     }

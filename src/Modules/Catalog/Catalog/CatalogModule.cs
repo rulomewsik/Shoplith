@@ -14,7 +14,7 @@ public static class CatalogModule
         
         //Data
         var connectionString = configuration.GetConnectionString("Database");
-        services.AddDbContext<CatalogDBContext>(options => options.UseNpgsql(connectionString));
+        services.AddDbContext<CatalogDbContext>(options => options.UseNpgsql(connectionString));
         
         services.AddScoped<IDatabaseSeeder, CatalogDatabaseSeeder>();
         
@@ -28,7 +28,7 @@ public static class CatalogModule
         //Use Cases
         
         //Data
-        app.UseMigration<CatalogDBContext>();
+        app.UseMigration<CatalogDbContext>();
         
         return app;
     }
