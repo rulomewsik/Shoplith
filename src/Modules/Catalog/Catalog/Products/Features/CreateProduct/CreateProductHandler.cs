@@ -4,8 +4,7 @@ public record CreateProductCommand(ProductDto Product) : ICommand<CreateProductR
 
 public record CreateProductResult(Guid Id);
 
-internal class CreateProductCommandHandler(CatalogDbContext dbContext)
-    : ICommandHandler<CreateProductCommand, CreateProductResult>
+internal class CreateProductHandler(CatalogDbContext dbContext) : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
     public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
     {
@@ -17,7 +16,7 @@ internal class CreateProductCommandHandler(CatalogDbContext dbContext)
         return new CreateProductResult(product.Id);
     }
 
-    private Product CreateNewProduct(ProductDto productDto)
+    private static Product CreateNewProduct(ProductDto productDto)
     {
         var product = Product.Create(
             Guid.NewGuid(),
